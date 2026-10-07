@@ -502,4 +502,4 @@ docker-compose.yml   # Postgres only — app runs natively
 [![GitHub](https://img.shields.io/badge/GitHub-Sridhar08--glitch-181717?logo=github)](https://github.com/Sridhar08-glitch)
 [![Followers](https://img.shields.io/github/followers/Sridhar08-glitch?label=followers&style=flat)](https://github.com/Sridhar08-glitch?tab=followers)
 
-*Built as the take-home exercise for the SDE-Platform & Products role at TrueLinks.AI. The code is mine; the sample ruleset and unit file were provided with the brief.*
+
