@@ -255,7 +255,21 @@ OPENAI_VISION_MODEL=gpt-4o-mini
 
 ## How to run it
 
-> **Windows one-click:** `setup.bat` installs everything (Python, Node, PostgreSQL, Ollama if available — falls back to mock AI), creates the database and `.env`, seeds data, and creates the demo users. After that, `start.bat` launches backend + frontend and opens the app. The manual steps below do the same thing.
+### Option 1 — One-click on Windows (`setup.bat` + `start.bat`)
+
+**First time: double-click `setup.bat`.** It walks through seven steps, printing progress for each:
+
+1. Checks for **Python**, **Node.js**, and **PostgreSQL** — anything missing is installed via winget (if it installs Python or Node, it asks you to re-run setup.bat once so the new PATH is picked up).
+2. Creates the app database. On a machine where PostgreSQL was just installed, it asks once for the `postgres` superuser password to create the `truelinks` role and `truelinks_db` — if the database already exists, this is skipped entirely.
+3. Detects **Ollama**: if it's running (or installable), the models `llama3.2:3b` and `llava:7b` are pulled if missing, and the app is configured for local AI. If Ollama isn't available, the app is configured for the **mock provider** instead — everything still works, no AI setup required.
+4. Sets up the backend: virtualenv, dependencies, **creates `backend/.env` automatically** with the right values for this machine (if a `.env` already exists, only the AI settings are refreshed), runs migrations, seeds the sample units, and creates the four demo users.
+5. Installs frontend packages.
+
+`setup.bat` is idempotent — safe to run again at any time; it skips whatever is already done.
+
+**Every time after that: double-click `start.bat`.** It applies any pending database migrations, opens two terminal windows (backend on :8000, frontend on :5173), waits until the backend actually responds, then opens the app in your browser. To stop the app, close those two windows.
+
+### Option 2 — Manual setup
 
 ### Prerequisites
 
