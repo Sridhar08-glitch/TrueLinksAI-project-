@@ -1,0 +1,14 @@
+Django==5.2
+djangorestframework==3.16.0
+djangorestframework-simplejwt==5.5.1
+django-cors-headers==4.7.0
+django-filter==25.1
+drf-spectacular==0.28.0
+psycopg2-binary==2.9.10
+Pillow==11.2.1
+PyMuPDF==1.25.5
+python-dotenv==1.1.0
+pydantic==2.11.4
+pytest==8.3.5
+pytest-django==4.11.1
+factory-boy==3.3.3

@@ -1,0 +1,19 @@
+# Local Postgres only. Backend, frontend, and Ollama run natively on the host:
+#   backend:  cd backend && .venv\Scripts\python.exe manage.py runserver 0.0.0.0:8000
+#   frontend: cd frontend && npm run dev
+#   ollama:   must be running locally on http://localhost:11434 (ollama serve)
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: truelinks_db
+      POSTGRES_USER: truelinks
+      # Must match DATABASE_URL in backend/.env
+      POSTGRES_PASSWORD: holora
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

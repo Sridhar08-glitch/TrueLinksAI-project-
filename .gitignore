@@ -1,0 +1,28 @@
+# Environment / secrets
+backend/.env
+.env
+*.env.local
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+backend/staticfiles/
+
+# Node
+node_modules/
+dist/
+frontend/dist/
+
+# Uploaded media
+backend/media/
+media/
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
